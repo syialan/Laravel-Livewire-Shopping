@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Produk extends Model
 {
     use HasFactory;
+
+    protected $table = 'produk';
+    protected $fillable = [
+        'nama_produk', 'berat', 'harga', 'gambar'
+    ];
+
+    public function keranjangs()
+    {
+        return $this->hasMany(Keranjang::class);
+    }
 }
