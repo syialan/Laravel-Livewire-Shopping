@@ -5,15 +5,15 @@
                 <div class="col-sm-6">
                     <div class="logo">
                         <h1>
-                            <a href="./"><img src="{{ asset('template/img/logo.png') }}"></a>
+                            LaraWire - Shopping
                         </h1>
                     </div>
                 </div>
 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="cart.html">Keranjang<i class="fa fa-shopping-cart"></i> <span
-                                class="product-count">0</span></a>
+                        <a href="{{ url('keranjang') }}">Keranjang<i class="fa fa-shopping-cart"></i> <span
+                                class="product-count">{{ $keranjang }}</span></a>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                             <a href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="{{ request()->is('keranjang') ? 'active' : '' }}">
-                            <a href="cart.html">Keranjang</a>
+                            <a href="{{ url('keranjang') }}">Keranjang</a>
                         </li>
                         @if (auth()->user())
                         @if (auth()->user()->level == 1)
@@ -72,8 +72,7 @@
                         </div>
 
                         <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
-                                rel="nofollow" href="#">Keranjangin</a>
+                            <button class="btn btn-primary" wire:click="keranjang({{ $p->id }})">Keranjangin</button>
                         </div>
                     </div>
                 </div>

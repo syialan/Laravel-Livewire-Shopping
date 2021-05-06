@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Homepage;
+use App\Http\Livewire\KeranjangUser;
 use App\Http\Livewire\TambahProduk;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,7 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', Homepage::class);
-Route::middleware('auth')->get('/tambah-produk', TambahProduk::class);
+Route::middleware('auth')->group(function () {
+    Route::get('/tambah-produk', TambahProduk::class);
+    Route::get('/keranjang', KeranjangUser::class);
+});
