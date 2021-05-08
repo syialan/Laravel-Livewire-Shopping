@@ -74,21 +74,37 @@
                                                 </label>
                                                 <input type="number" min="0" value="{{ old('harga') }}"
                                                     placeholder="silahkan diisi Harganya" id="harga" wire:model="harga"
-                                                    class="input-text ">
+                                                    class="input-text @error('harga') is-invalid @enderror">
+                                                @error('harga')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </p>
 
                                             <p class="form-row form-row-wide">
                                                 <label for="berat">Berat Produk</label>
                                                 <input type="number" min="0" value="{{ old('berat') }}"
                                                     placeholder="Silahkan diisi Beratnya" id="berat" wire:model="berat"
-                                                    class="input-text ">
+                                                    class="input-text @error('berat') is-invalid @enderror">
+                                                @error('berat')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </p>
 
                                             <p class="form-row form-row-wide address-field validate-required">
                                                 <label for="gambar">Foto Produk</label>
                                                 <input type="file" value="{{ old('gambar') }}"
                                                     placeholder="Silahkan Diisi Foto Produk" id="gambar"
-                                                    wire:model="gambar" class="input-text ">
+                                                    wire:model="gambar"
+                                                    class="input-text @error('gambar') is-invalid @enderror">
+                                                    @error('gambar')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </p>
                                         </div>
                                         <button type="submit" class="btn btn-success">SIMPAN PRODUK</button>

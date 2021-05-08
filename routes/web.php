@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Homepage;
 use App\Http\Livewire\KeranjangUser;
+use App\Http\Livewire\OngkosKirim;
 use App\Http\Livewire\TambahProduk;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,5 @@ Route::get('/', Homepage::class);
 Route::middleware('auth')->group(function () {
     Route::get('/tambah-produk', TambahProduk::class);
     Route::get('/keranjang', KeranjangUser::class);
+    Route::get('/ongkos-kirim/{id}', OngkosKirim::class);
 });

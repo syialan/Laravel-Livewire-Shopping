@@ -12,8 +12,11 @@ class Homepage extends Component
     public $pencarian;
     public $keranjang;
 
-    public function mount() {
-        $this->keranjang = Keranjang::where('user_id', auth()->user()->id)->count();
+    public function mount()
+    {
+        if (auth()->user()) {
+            $this->keranjang = Keranjang::where('user_id', auth()->user()->id)->count();
+        }
     }
 
     public function keranjang($id)

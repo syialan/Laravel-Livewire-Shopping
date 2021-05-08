@@ -13,7 +13,7 @@
                 <div class="col-sm-6">
                     <div class="shopping-item">
                         <a href="{{ url('keranjang') }}">Keranjang<i class="fa fa-shopping-cart"></i> <span
-                                class="product-count">{{ $keranjang }}</span></a>
+                                class="product-count">{{ $keranjang ?? 0 }}</span></a>
                     </div>
                 </div>
             </div>
