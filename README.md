@@ -20,6 +20,8 @@ $ php artisan storage:link
 ```
 Setting database pada .env sesuai nama database anda.
 
+Level 1 Admin, 0 User
+
 ## Raja Ongkir
 
 Package: [Github](https://github.com/kavist/rajaongkir)
