@@ -3,6 +3,7 @@
 use App\Http\Livewire\Homepage;
 use App\Http\Livewire\KeranjangUser;
 use App\Http\Livewire\OngkosKirim;
+use App\Http\Livewire\Pembayaran;
 use App\Http\Livewire\TambahProduk;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +30,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/tambah-produk', TambahProduk::class);
     Route::get('/keranjang', KeranjangUser::class);
     Route::get('/ongkos-kirim/{id}', OngkosKirim::class);
+    Route::get('/pembayaran/{id}', Pembayaran::class);
 });

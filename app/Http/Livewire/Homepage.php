@@ -23,6 +23,9 @@ class Homepage extends Component
     {
         $produk = Produk::findOrFail($id);
 
+        if (!auth()->user()) {
+            return redirect()->to('login');
+        }
         Keranjang::create([
             'user_id' => auth()->user()->id,
             'produk_id' => $produk->id,
